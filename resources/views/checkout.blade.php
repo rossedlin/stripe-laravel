@@ -25,12 +25,12 @@
     <div class="row mt-5 mb-5">
         <div class="col-4"></div>
         <div class="col-2">
-            <form action="/create-test-checkout-session" method="POST">
+            <form action="/test" method="POST">
                 <button type="submit" id="checkout-test-button" class="btn btn-primary">Test Mode</button>
             </form>
         </div>
         <div class="col-2">
-            <form action="/create-live-checkout-session" method="POST">
+            <form action="/live" method="POST">
                 <button type="submit" id="checkout-live-button" class="btn btn-success">LIVE Mode</button>
             </form>
         </div>
