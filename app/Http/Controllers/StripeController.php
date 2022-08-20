@@ -6,6 +6,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
+use Illuminate\Http\RedirectResponse;
 use Stripe\Checkout\Session;
 use Stripe\Exception\ApiErrorException;
 use Stripe\Stripe;
@@ -21,7 +22,7 @@ class StripeController extends Controller
     }
 
     /**
-     * @return void
+     * @return RedirectResponse
      * @throws ApiErrorException
      */
     public function test()
@@ -32,7 +33,7 @@ class StripeController extends Controller
             'line_items'  => [
                 [
                     'price_data' => [
-                        'currency'     => 'usd',
+                        'currency'     => 'gbp',
                         'product_data' => [
                             'name' => 'T-shirt',
                         ],
@@ -42,15 +43,15 @@ class StripeController extends Controller
                 ],
             ],
             'mode'        => 'payment',
-            'success_url' => '/success',
-            'cancel_url'  => '/',
+            'success_url' => 'http://localhost/success',
+            'cancel_url'  => 'http://localhost/',
         ]);
 
-//        return $response->withHeader('Location', $session->url)->withStatus(303);
+        return redirect()->away($session->url);
     }
 
     /**
-     * @return void
+     * @return RedirectResponse
      * @throws ApiErrorException
      */
     public function live()
@@ -61,7 +62,7 @@ class StripeController extends Controller
             'line_items'  => [
                 [
                     'price_data' => [
-                        'currency'     => 'usd',
+                        'currency'     => 'gbp',
                         'product_data' => [
                             'name' => 'T-shirt',
                         ],
@@ -71,11 +72,11 @@ class StripeController extends Controller
                 ],
             ],
             'mode'        => 'payment',
-            'success_url' => '/success',
-            'cancel_url'  => '/',
+            'success_url' => 'http://localhost/success',
+            'cancel_url'  => 'http://localhost/',
         ]);
 
-//        return $response->withHeader('Location', $session->url)->withStatus(303);
+        return redirect()->away($session->url);
     }
 
     /**
