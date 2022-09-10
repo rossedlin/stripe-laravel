@@ -19,18 +19,14 @@
  - `app/Http/Controllers/StripeController.php`
  - `config/stripe.php`
  - `routes/web.phps`
- - `resources/views/checkout.blade.php`
- - `resources/views/layout.blade.php`
- - `resources/views/success.blade.php`
+ - `resources/views/index.blade.php`
 
 ## Env
 
-Copy `.env.example` and name `.env` and populate the following API keys
+Copy `.env.example` name it `.env` and populate the following API keys
 
- - `STRIPE_TEST_SK`
- - `STRIPE_TEST_PK`
- - `STRIPE_LIVE_SK`
- - `STRIPE_LIVE_PK`
+ - `STRIPE_SK`
+ - `STRIPE_PK`
 
 ## Deploy
 
