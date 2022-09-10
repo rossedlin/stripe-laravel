@@ -21,13 +21,13 @@ class StripeController extends Controller
                         'product_data' => [
                             'name' => 'Send me money!!!',
                         ],
-                        'unit_amount'  => 500,
+                        'unit_amount'  => 500, //£5.00
                     ],
                     'quantity'   => 1,
                 ],
             ],
             'mode'        => 'payment',
-            'success_url' => route('index'),
+            'success_url' => route('success'),
             'cancel_url'  => route('index'),
         ]);
 
