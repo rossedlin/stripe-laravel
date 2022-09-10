@@ -14,9 +14,9 @@ use Stripe\Stripe;
 class StripeController extends Controller
 {
     /**
-     * @return Application|Factory|View
+     * @return View|Factory|Application
      */
-    public function checkout()
+    public function checkout(): View|Factory|Application
     {
         return view('checkout');
     }
@@ -25,7 +25,7 @@ class StripeController extends Controller
      * @return RedirectResponse
      * @throws ApiErrorException
      */
-    public function test()
+    public function test(): RedirectResponse
     {
         Stripe::setApiKey(config('stripe.test.sk'));
 
@@ -54,7 +54,7 @@ class StripeController extends Controller
      * @return RedirectResponse
      * @throws ApiErrorException
      */
-    public function live()
+    public function live(): RedirectResponse
     {
         Stripe::setApiKey(config('stripe.live.sk'));
 
@@ -80,9 +80,9 @@ class StripeController extends Controller
     }
 
     /**
-     * @return Application|Factory|View
+     * @return View|Factory|Application
      */
-    public function success()
+    public function success(): View|Factory|Application
     {
         return view('success');
     }
