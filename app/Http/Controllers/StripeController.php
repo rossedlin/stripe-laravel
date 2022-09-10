@@ -1,41 +1,25 @@
-<?php
+<?php /** @noinspection ALL */
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-
-use Illuminate\Http\RedirectResponse;
-use Stripe\Checkout\Session;
-use Stripe\Exception\ApiErrorException;
-use Stripe\Stripe;
-
 class StripeController extends Controller
 {
-    /**
-     * @return View|Factory|Application
-     */
-    public function checkout(): View|Factory|Application
+    public function index()
     {
-        return view('checkout');
+        return view('index');
     }
 
-    /**
-     * @return RedirectResponse
-     * @throws ApiErrorException
-     */
-    public function test(): RedirectResponse
+    public function checkout()
     {
-        Stripe::setApiKey(config('stripe.test.sk'));
+        \Stripe\Stripe::setApiKey(config('stripe.sk'));
 
-        $session = Session::create([
+        $session = \Stripe\Checkout\Session::create([
             'line_items'  => [
                 [
                     'price_data' => [
                         'currency'     => 'gbp',
                         'product_data' => [
-                            'name' => 'T-shirt',
+                            'name' => 'Send me money!!!',
                         ],
                         'unit_amount'  => 500,
                     ],
@@ -43,47 +27,15 @@ class StripeController extends Controller
                 ],
             ],
             'mode'        => 'payment',
-            'success_url' => route('success'),
-            'cancel_url'  => route('checkout'),
+            'success_url' => route('index'),
+            'cancel_url'  => route('index'),
         ]);
 
         return redirect()->away($session->url);
     }
 
-    /**
-     * @return RedirectResponse
-     * @throws ApiErrorException
-     */
-    public function live(): RedirectResponse
+    public function success()
     {
-        Stripe::setApiKey(config('stripe.live.sk'));
-
-        $session = Session::create([
-            'line_items'  => [
-                [
-                    'price_data' => [
-                        'currency'     => 'gbp',
-                        'product_data' => [
-                            'name' => 'T-shirt',
-                        ],
-                        'unit_amount'  => 500,
-                    ],
-                    'quantity'   => 1,
-                ],
-            ],
-            'mode'        => 'payment',
-            'success_url' => route('success'),
-            'cancel_url'  => route('checkout'),
-        ]);
-
-        return redirect()->away($session->url);
-    }
-
-    /**
-     * @return View|Factory|Application
-     */
-    public function success(): View|Factory|Application
-    {
-        return view('success');
+        return view('index');
     }
 }
