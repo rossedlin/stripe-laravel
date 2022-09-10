@@ -13,12 +13,13 @@
  - `composer create-project laravel/laravel stripe-laravel`
  - `cd stripe-laravel`
  - `composer require stripe/stripe-php`
+ - `php artisan make:controller StripeController`
 
 ## Code
 
  - `app/Http/Controllers/StripeController.php`
  - `config/stripe.php`
- - `routes/web.phps`
+ - `routes/web.php`
  - `resources/views/index.blade.php`
 
 ## Env
