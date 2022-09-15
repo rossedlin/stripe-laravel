@@ -20,4 +20,4 @@ pipelines:
             - composer
           script:
             - ssh -p 65002 u182290128@145.14.153.216 'cd ~/bitbucket/stripe-laravel && git pull;'
-            - ssh -p 65002 u182290128@145.14.153.216 'cd ~/bitbucket/stripe-laravel && /opt/alt/php80/usr/bin/php ~/composer.phar install --no-dev --prefer-dist --no-ansi --no-interaction --no-progress;'
+            - ssh -p 65002 u182290128@145.14.153.216 'cd ~/bitbucket/stripe-laravel && /opt/alt/php81/usr/bin/php ~/composer.phar install --no-dev --prefer-dist --no-ansi --no-interaction --no-progress;'
