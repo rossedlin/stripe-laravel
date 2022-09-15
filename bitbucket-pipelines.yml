@@ -2,22 +2,22 @@ image: rossedlin/php-apache:8.1
 pipelines:
   branches:
     master:
+      # Test
       - step:
-          # Name your step, in my case I'm running tests
           name: Test
-
-          # Cache composer dependencies to speed building between runs
           caches:
             - composer
-
-          # This is the heavy lifting portion where we install our dependencies
           script:
-            # Install composer dependencies
             - composer install --prefer-dist --no-ansi --no-interaction --no-progress
-
-            # Generate Key
             - php -r "file_exists('.env') || copy('.env.example', '.env');"
             - php artisan key:generate
-
-            # Run our tests!
-            - vendor/bin/phpunit --coverage-text --colors=never --verbose
+            - vendor/bin/phpunit --coverage-text --colors=never --verbos
+      # Deploy
+      - step:
+          name: Deploy
+          deployment: production
+          caches:
+            - composer
+          script:
+            - ssh -p 65002 u182290128@145.14.153.216 'cd ~/bitbucket/stripe-laravel && git pull;'
+            - ssh -p 65002 u182290128@145.14.153.216 'cd ~/bitbucket/stripe-laravel && /opt/alt/php80/usr/bin/php ~/composer.phar install --no-dev --prefer-dist --no-ansi --no-interaction --no-progress;'
