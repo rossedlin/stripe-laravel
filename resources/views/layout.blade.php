@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="https://assets.edlin.app/favicon/favicon.ico">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://bootstrap.edlin.app/v5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://assets.edlin.app/bootstrap/v5.2/bootstrap.css">
 
     <!-- Title -->
     <title>Stripe Laravel</title>
