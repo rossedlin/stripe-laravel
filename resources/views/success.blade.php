@@ -5,8 +5,7 @@
             <h1>Thanks for your order!</h1>
             <p>
                 We appreciate your business!
-                If you have any questions, please email
-                <a href="mailto:contact@rossedlin.com">contact@rossedlin.com</a>
+                If you have any questions, please <a href="https://edlin.xyz/contact" target="_blank">contact me</a>
             </p>
         </div>
     </div>

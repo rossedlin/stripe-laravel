@@ -22,11 +22,11 @@
     <div class="row mt-3">
         <div class="col-12">
             <div class="links">
-                <a href="https://www.rossedlin.com/" target="_blank">Home</a>
-                <a href="https://www.rossedlin.com/portfolio" target="_blank">Portfolio</a>
-                <a href="https://www.rossedlin.com/contact" target="_blank">Contact</a>
-                <a href="https://www.rossedlin.com/linkedin" target="_blank">LinkedIn</a>
-                <a href="https://www.rossedlin.com/portfolio/stripe-laravel/code" target="_blank">BitBucket (Source
+                <a href="https://edlin.xyz/" target="_blank">Home</a>
+                <a href="https://edlin.xyz/portfolio" target="_blank">Portfolio</a>
+                <a href="https://edlin.xyz/contact" target="_blank">Contact</a>
+                <a href="https://edlin.xyz/linkedin" target="_blank">LinkedIn</a>
+                <a href="https://edlin.xyz/github/stripe-laravel" target="_blank">GitHub (Source
                     Code)</a>
             </div>
         </div>

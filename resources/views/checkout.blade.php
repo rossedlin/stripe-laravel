@@ -11,7 +11,7 @@
                                                           target="_blank">Laravel</a> / <a
                     href="https://stripe.com/en-gb-us" target="_blank">Stripe</a> app in 5 minutes.</p>
 
-            <p>You can check my source code <a href="https://www.rossedlin.com/portfolio/stripe-laravel/code" target="_blank">here</a>.
+            <p>You can check my source code <a href="https://edlin.xyz/github/stripe-laravel" target="_blank">here</a>.
             </p>
 
             <p class="text-danger">
