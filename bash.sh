@@ -1,2 +1,2 @@
 
-docker exec -it stripe-laravel-web-1 bash
+docker compose run --rm web bash
