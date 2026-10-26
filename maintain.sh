@@ -13,4 +13,16 @@ rm -f -Rf vendor
 #
 docker compose pull
 docker compose run --rm web composer update
+
+#
+# Initial Repo
+#
+if [ ! -f .env ]; then
+    cp .env.example .env
+    docker compose run --rm web php artisan key:generate
+fi
+
+#
+# Test Repo
+#
 docker compose run --rm web vendor/bin/phpunit --coverage-text --colors=never --verbose
