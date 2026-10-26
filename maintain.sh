@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
 
 #
 # Cleanup Project Files
@@ -10,3 +13,4 @@ rm -f -Rf vendor
 #
 docker compose pull
 docker compose run --rm web composer update
+docker compose run --rm web vendor/bin/phpunit --coverage-text --colors=never --verbose

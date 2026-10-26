@@ -1,2 +1,5 @@
+#!/usr/bin/env bash
 
-docker compose run web vendor/bin/phpunit --coverage-text --colors=never --verbose
+set -euo pipefail
+
+docker compose run --rm web vendor/bin/phpunit --coverage-text --colors=never --verbose
